@@ -9,8 +9,16 @@
 #import "CaptureView.h"
 
 @implementation CaptureView
++ (Class)layerClass {
+    return [AVCaptureVideoPreviewLayer class];
+}
 
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    self.cameraViewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
+}
 #pragma mark Setters & Getters
+
 - (AVCaptureVideoPreviewLayer *)cameraViewLayer {
     return (AVCaptureVideoPreviewLayer *)self.layer;
 }

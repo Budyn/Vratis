@@ -1,5 +1,5 @@
 //
-//  AppDelegate.h
+//  VratisAppDelegate.h
 //  Vratis
 //
 //  Created by Daniel Budynski on 26/10/2016.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface VratisAppDelegate : UIResponder <UIApplicationDelegate>
 @property (strong, nonatomic) UIWindow *window;
 
 

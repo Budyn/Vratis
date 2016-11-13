@@ -1,3 +1,15 @@
-PODFILE CHECKSUM: 06855a45daddf817fadb1641992b30ae1cb20cd5
+PODS:
+  - BFPaperButton (2.0.29):
+    - UIColor+BFPaperColors
+  - UIColor+BFPaperColors (1.7.2)
+
+DEPENDENCIES:
+  - BFPaperButton
+
+SPEC CHECKSUMS:
+  BFPaperButton: 7df738f2e749a9a4edd3e043f0621ee02215e417
+  UIColor+BFPaperColors: 03101fe6c10ed00c6daae7c26553f1de41500853
+
+PODFILE CHECKSUM: 952cc4d6206631c64719da83c7c9b836f350f302
 
 COCOAPODS: 1.0.1

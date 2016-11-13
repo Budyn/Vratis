@@ -10,7 +10,12 @@
 #import "CaptureView.h"
 
 @interface CameraView : UIView
-@property (weak, nonatomic) IBOutlet CaptureView *captureView;
+- (void)setCaptureSession:(AVCaptureSession *)session;
+- (AVCaptureSession *)captureSession;
+- (void)setCameraOrientation:(AVCaptureVideoOrientation)orientation;
+- (AVCaptureVideoOrientation)cameraOrientation;
+
+- (void)setCameraLayerOpacity:(float)opacity;
 
 - (void)enablePhotoUI;
 - (void)disablePhotoUI;

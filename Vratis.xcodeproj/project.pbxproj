@@ -9,9 +9,8 @@
 /* Begin PBXBuildFile section */
 		2C4F760C6601C4986D542E8B /* libPods-Vratis.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5753916F993E6796A30FFE59 /* libPods-Vratis.a */; };
 		2FBE7E8D853DB3283B932555 /* libPods-VratisTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 28F9ACD5965345B4B09E128B /* libPods-VratisTests.a */; };
-		AF2ABE0F1DD130C200D3143F /* SettingsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AF2ABE0E1DD130C200D3143F /* SettingsTableViewCell.m */; };
 		AF4C96BE1DC117EE004961BC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AF4C96BD1DC117EE004961BC /* main.m */; };
-		AF4C96C11DC117EE004961BC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AF4C96C01DC117EE004961BC /* AppDelegate.m */; };
+		AF4C96C11DC117EE004961BC /* VratisAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AF4C96C01DC117EE004961BC /* VratisAppDelegate.m */; };
 		AF4C96C71DC117EE004961BC /* Camera.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF4C96C51DC117EE004961BC /* Camera.storyboard */; };
 		AF4C96CC1DC117EE004961BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF4C96CA1DC117EE004961BC /* LaunchScreen.storyboard */; };
 		AF4C96D71DC117EF004961BC /* VratisTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AF4C96D61DC117EF004961BC /* VratisTests.m */; };
@@ -25,8 +24,12 @@
 		AF78F8B61DD120630012EA1E /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF78F8AD1DD120630012EA1E /* RootViewController.m */; };
 		AF78F8B71DD120630012EA1E /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF78F8AF1DD120630012EA1E /* SettingsViewController.m */; };
 		AFB5D2671DCFBA8600A35812 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFB5D2661DCFBA8600A35812 /* Media.xcassets */; };
+		AFE6EE6E1DD7AE7A00EE3F18 /* CameraView.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE6EE6A1DD7AE7A00EE3F18 /* CameraView.m */; };
+		AFE6EE6F1DD7AE7A00EE3F18 /* SettingsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE6EE6C1DD7AE7A00EE3F18 /* SettingsTableViewCell.m */; };
+		AFE6EE731DD7B37D00EE3F18 /* UserDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = AFE6EE721DD7B37D00EE3F18 /* UserDefaults.plist */; };
+		AFE6EE781DD7C26400EE3F18 /* NSError+Description.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE6EE751DD7C26400EE3F18 /* NSError+Description.m */; };
+		AFE6EE791DD7C26400EE3F18 /* PhotoCaptureDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE6EE771DD7C26400EE3F18 /* PhotoCaptureDelegate.m */; };
 		AFFDA4A71DD779600072D962 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFFDA4A61DD779600072D962 /* AVFoundation.framework */; };
-		AFFDA4AA1DD77CFD0072D962 /* CameraView.m in Sources */ = {isa = PBXBuildFile; fileRef = AFFDA4A91DD77CFD0072D962 /* CameraView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,12 +48,10 @@
 		28F9ACD5965345B4B09E128B /* libPods-VratisTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-VratisTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5753916F993E6796A30FFE59 /* libPods-Vratis.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Vratis.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		79DAA62CF828877EC0757B93 /* Pods-VratisTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VratisTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VratisTests/Pods-VratisTests.debug.xcconfig"; sourceTree = "<group>"; };
-		AF2ABE0D1DD130C200D3143F /* SettingsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsTableViewCell.h; path = ../SettingsTableViewCell.h; sourceTree = "<group>"; };
-		AF2ABE0E1DD130C200D3143F /* SettingsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsTableViewCell.m; path = ../SettingsTableViewCell.m; sourceTree = "<group>"; };
 		AF4C96B91DC117EE004961BC /* Vratis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vratis.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF4C96BD1DC117EE004961BC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		AF4C96BF1DC117EE004961BC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		AF4C96C01DC117EE004961BC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		AF4C96BF1DC117EE004961BC /* VratisAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VratisAppDelegate.h; sourceTree = "<group>"; };
+		AF4C96C01DC117EE004961BC /* VratisAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VratisAppDelegate.m; sourceTree = "<group>"; };
 		AF4C96C61DC117EE004961BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Camera.storyboard; sourceTree = "<group>"; };
 		AF4C96CB1DC117EE004961BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AF4C96CD1DC117EE004961BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -76,9 +77,16 @@
 		AF78F8AE1DD120630012EA1E /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsViewController.h; path = "View Controller/SettingsViewController.h"; sourceTree = "<group>"; };
 		AF78F8AF1DD120630012EA1E /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsViewController.m; path = "View Controller/SettingsViewController.m"; sourceTree = "<group>"; };
 		AFB5D2661DCFBA8600A35812 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Media.xcassets; path = ../Media.xcassets; sourceTree = "<group>"; };
+		AFE6EE691DD7AE7A00EE3F18 /* CameraView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CameraView.h; path = View/CameraView.h; sourceTree = "<group>"; };
+		AFE6EE6A1DD7AE7A00EE3F18 /* CameraView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CameraView.m; path = View/CameraView.m; sourceTree = "<group>"; };
+		AFE6EE6B1DD7AE7A00EE3F18 /* SettingsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsTableViewCell.h; path = View/SettingsTableViewCell.h; sourceTree = "<group>"; };
+		AFE6EE6C1DD7AE7A00EE3F18 /* SettingsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsTableViewCell.m; path = View/SettingsTableViewCell.m; sourceTree = "<group>"; };
+		AFE6EE721DD7B37D00EE3F18 /* UserDefaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = UserDefaults.plist; sourceTree = "<group>"; };
+		AFE6EE741DD7C26400EE3F18 /* NSError+Description.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+Description.h"; sourceTree = "<group>"; };
+		AFE6EE751DD7C26400EE3F18 /* NSError+Description.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+Description.m"; sourceTree = "<group>"; };
+		AFE6EE761DD7C26400EE3F18 /* PhotoCaptureDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PhotoCaptureDelegate.h; path = "View Controller/PhotoCaptureDelegate.h"; sourceTree = "<group>"; };
+		AFE6EE771DD7C26400EE3F18 /* PhotoCaptureDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PhotoCaptureDelegate.m; path = "View Controller/PhotoCaptureDelegate.m"; sourceTree = "<group>"; };
 		AFFDA4A61DD779600072D962 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		AFFDA4A81DD77CFD0072D962 /* CameraView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CameraView.h; path = ../CameraView.h; sourceTree = "<group>"; };
-		AFFDA4A91DD77CFD0072D962 /* CameraView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CameraView.m; path = ../CameraView.m; sourceTree = "<group>"; };
 		D811B7ABF75B2446102ABC59 /* Pods-VratisTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VratisTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VratisTests/Pods-VratisTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -148,8 +156,8 @@
 			children = (
 				AF2ABDFE1DD1276400D3143F /* Storyboards */,
 				AF4C96E51DC11CE2004961BC /* View Controller */,
-				AF4C96BF1DC117EE004961BC /* AppDelegate.h */,
-				AF4C96C01DC117EE004961BC /* AppDelegate.m */,
+				AF4C96BF1DC117EE004961BC /* VratisAppDelegate.h */,
+				AF4C96C01DC117EE004961BC /* VratisAppDelegate.m */,
 				AFB5D2661DCFBA8600A35812 /* Media.xcassets */,
 				AF4C96CD1DC117EE004961BC /* Info.plist */,
 				AF4C96BC1DC117EE004961BC /* Supporting Files */,
@@ -160,7 +168,10 @@
 		AF4C96BC1DC117EE004961BC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AFE6EE751DD7C26400EE3F18 /* NSError+Description.m */,
+				AFE6EE741DD7C26400EE3F18 /* NSError+Description.h */,
 				AF4C96BD1DC117EE004961BC /* main.m */,
+				AFE6EE721DD7B37D00EE3F18 /* UserDefaults.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -199,6 +210,7 @@
 		AF4C96EA1DC11D84004961BC /* Camera View Controller */ = {
 			isa = PBXGroup;
 			children = (
+				AFE6EE701DD7AE9C00EE3F18 /* Delegate */,
 				AF4C96EC1DC11E30004961BC /* Camera View */,
 				AF78F8A81DD120630012EA1E /* CameraViewController.h */,
 				AF78F8A91DD120630012EA1E /* CameraViewController.m */,
@@ -209,8 +221,8 @@
 		AF4C96EC1DC11E30004961BC /* Camera View */ = {
 			isa = PBXGroup;
 			children = (
-				AFFDA4A81DD77CFD0072D962 /* CameraView.h */,
-				AFFDA4A91DD77CFD0072D962 /* CameraView.m */,
+				AFE6EE691DD7AE7A00EE3F18 /* CameraView.h */,
+				AFE6EE6A1DD7AE7A00EE3F18 /* CameraView.m */,
 				AF78F8A41DD120630012EA1E /* CaptureView.h */,
 				AF78F8A51DD120630012EA1E /* CaptureView.m */,
 			);
@@ -240,10 +252,10 @@
 		AFAEDFF91DC4B1AE001584B6 /* Settings View */ = {
 			isa = PBXGroup;
 			children = (
+				AFE6EE6B1DD7AE7A00EE3F18 /* SettingsTableViewCell.h */,
+				AFE6EE6C1DD7AE7A00EE3F18 /* SettingsTableViewCell.m */,
 				AF78F8A61DD120630012EA1E /* SettingsView.h */,
 				AF78F8A71DD120630012EA1E /* SettingsView.m */,
-				AF2ABE0D1DD130C200D3143F /* SettingsTableViewCell.h */,
-				AF2ABE0E1DD130C200D3143F /* SettingsTableViewCell.m */,
 			);
 			name = "Settings View";
 			sourceTree = "<group>";
@@ -257,6 +269,15 @@
 				AF78F8A31DD120630012EA1E /* RootModelString.m */,
 			);
 			name = "Root Model";
+			sourceTree = "<group>";
+		};
+		AFE6EE701DD7AE9C00EE3F18 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				AFE6EE761DD7C26400EE3F18 /* PhotoCaptureDelegate.h */,
+				AFE6EE771DD7C26400EE3F18 /* PhotoCaptureDelegate.m */,
+			);
+			name = Delegate;
 			sourceTree = "<group>";
 		};
 		F248A18876E0E2A4C9E1A9F6 /* Pods */ = {
@@ -363,6 +384,7 @@
 				AF4C96CC1DC117EE004961BC /* LaunchScreen.storyboard in Resources */,
 				AFB5D2671DCFBA8600A35812 /* Media.xcassets in Resources */,
 				AF4C96C71DC117EE004961BC /* Camera.storyboard in Resources */,
+				AFE6EE731DD7B37D00EE3F18 /* UserDefaults.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,16 +497,18 @@
 			files = (
 				AF78F8B41DD120630012EA1E /* CameraViewController.m in Sources */,
 				AF78F8B71DD120630012EA1E /* SettingsViewController.m in Sources */,
-				AF2ABE0F1DD130C200D3143F /* SettingsTableViewCell.m in Sources */,
-				AF4C96C11DC117EE004961BC /* AppDelegate.m in Sources */,
+				AFE6EE6F1DD7AE7A00EE3F18 /* SettingsTableViewCell.m in Sources */,
+				AF4C96C11DC117EE004961BC /* VratisAppDelegate.m in Sources */,
 				AF605E9F1DD75A5800D38E8F /* SettingsTableDataSource.m in Sources */,
 				AF78F8B11DD120630012EA1E /* RootModelString.m in Sources */,
 				AF4C96BE1DC117EE004961BC /* main.m in Sources */,
 				AF78F8B21DD120630012EA1E /* CaptureView.m in Sources */,
 				AF78F8B61DD120630012EA1E /* RootViewController.m in Sources */,
-				AFFDA4AA1DD77CFD0072D962 /* CameraView.m in Sources */,
+				AFE6EE6E1DD7AE7A00EE3F18 /* CameraView.m in Sources */,
 				AF78F8B01DD120630012EA1E /* RootModel.m in Sources */,
+				AFE6EE791DD7C26400EE3F18 /* PhotoCaptureDelegate.m in Sources */,
 				AF78F8B51DD120630012EA1E /* Page.m in Sources */,
+				AFE6EE781DD7C26400EE3F18 /* NSError+Description.m in Sources */,
 				AF78F8B31DD120630012EA1E /* SettingsView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
