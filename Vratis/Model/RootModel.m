@@ -14,9 +14,11 @@
 #import "Page.h"
 #import "CameraViewController.h"
 #import "SettingsViewController.h"
+#import "MapViewController.h"
 
 #define kSettingsVCIndex 0
 #define kCameraVCIndex 1
+#define kMapVCIndex 2
 
 @interface RootModel()
 @property (strong, nonatomic) UIStoryboard *cameraStoryboard;
@@ -27,7 +29,7 @@
 - (instancetype)init {
     if (self = [super init]) {
         _cameraStoryboard = [UIStoryboard storyboardWithName:@"Camera" bundle:[NSBundle mainBundle]];
-        _pageTitles = @[settingsViewPageTitle, cameraViewPageTitle];
+        _pageTitles = @[settingsViewPageTitle, cameraViewPageTitle, mapViewPageTitle];
     }
     return self;
 }
@@ -83,6 +85,14 @@
             cameraPage.title = [self.pageTitles objectAtIndex:pageIndex];
             
             return cameraPage;
+        }
+        case kMapVCIndex:
+        {
+            MapViewController *mapPage = (MapViewController *)[self.cameraStoryboard instantiateViewControllerWithIdentifier:@"MapVC"];
+            mapPage.pageIndex = pageIndex;
+            mapPage.title = [self.pageTitles objectAtIndex:pageIndex];
+            
+            return mapPage;
         }
         default: {
             return nil;

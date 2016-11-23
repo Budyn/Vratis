@@ -62,6 +62,8 @@
         return;
     }
     
+    self.dataImage = [UIImage imageWithData:self.photoData];
+    
     [PHPhotoLibrary requestAuthorization:^( PHAuthorizationStatus status ) {
         if ( status == PHAuthorizationStatusAuthorized ) {
             [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{

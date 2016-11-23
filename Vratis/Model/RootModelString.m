@@ -10,3 +10,4 @@
 
 NSString * const cameraViewPageTitle = @"Camera";
 NSString * const settingsViewPageTitle = @"Preferences";
+NSString * const mapViewPageTitle = @"Map";

@@ -10,3 +10,4 @@
 
 extern NSString * const cameraViewPageTitle;
 extern NSString * const settingsViewPageTitle;
+extern NSString * const mapViewPageTitle;

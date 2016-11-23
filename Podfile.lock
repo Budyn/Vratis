@@ -1,15 +1,12 @@
 PODS:
-  - BFPaperButton (2.0.29):
-    - UIColor+BFPaperColors
-  - UIColor+BFPaperColors (1.7.2)
+  - OpenCV (3.0.0)
 
 DEPENDENCIES:
-  - BFPaperButton
+  - OpenCV
 
 SPEC CHECKSUMS:
-  BFPaperButton: 7df738f2e749a9a4edd3e043f0621ee02215e417
-  UIColor+BFPaperColors: 03101fe6c10ed00c6daae7c26553f1de41500853
+  OpenCV: be07c02f0d8f125f1d40d261e66a66cb66ece3b3
 
-PODFILE CHECKSUM: 952cc4d6206631c64719da83c7c9b836f350f302
+PODFILE CHECKSUM: d665291f2af1e22226aa095ed137774e0c92e042
 
 COCOAPODS: 1.0.1

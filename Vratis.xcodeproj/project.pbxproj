@@ -23,6 +23,10 @@
 		AF78F8B51DD120630012EA1E /* Page.m in Sources */ = {isa = PBXBuildFile; fileRef = AF78F8AB1DD120630012EA1E /* Page.m */; };
 		AF78F8B61DD120630012EA1E /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF78F8AD1DD120630012EA1E /* RootViewController.m */; };
 		AF78F8B71DD120630012EA1E /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF78F8AF1DD120630012EA1E /* SettingsViewController.m */; };
+		AF99F0881DE4A99800022926 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF99F0871DE4A99800022926 /* MapViewController.m */; };
+		AF99F08B1DE4A9AE00022926 /* MapView.m in Sources */ = {isa = PBXBuildFile; fileRef = AF99F08A1DE4A9AE00022926 /* MapView.m */; };
+		AF99F08F1DE4B18000022926 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF99F08E1DE4B18000022926 /* MapKit.framework */; };
+		AF99F0911DE4CDA700022926 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF99F0901DE4CDA700022926 /* CoreLocation.framework */; };
 		AFB5D2671DCFBA8600A35812 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFB5D2661DCFBA8600A35812 /* Media.xcassets */; };
 		AFE6EE6E1DD7AE7A00EE3F18 /* CameraView.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE6EE6A1DD7AE7A00EE3F18 /* CameraView.m */; };
 		AFE6EE6F1DD7AE7A00EE3F18 /* SettingsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE6EE6C1DD7AE7A00EE3F18 /* SettingsTableViewCell.m */; };
@@ -76,6 +80,12 @@
 		AF78F8AD1DD120630012EA1E /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RootViewController.m; path = "View Controller/RootViewController.m"; sourceTree = "<group>"; };
 		AF78F8AE1DD120630012EA1E /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsViewController.h; path = "View Controller/SettingsViewController.h"; sourceTree = "<group>"; };
 		AF78F8AF1DD120630012EA1E /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsViewController.m; path = "View Controller/SettingsViewController.m"; sourceTree = "<group>"; };
+		AF99F0861DE4A99800022926 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapViewController.h; path = ../MapViewController.h; sourceTree = "<group>"; };
+		AF99F0871DE4A99800022926 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MapViewController.m; path = ../MapViewController.m; sourceTree = "<group>"; };
+		AF99F0891DE4A9AE00022926 /* MapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapView.h; sourceTree = "<group>"; };
+		AF99F08A1DE4A9AE00022926 /* MapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapView.m; sourceTree = "<group>"; };
+		AF99F08E1DE4B18000022926 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		AF99F0901DE4CDA700022926 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		AFB5D2661DCFBA8600A35812 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Media.xcassets; path = ../Media.xcassets; sourceTree = "<group>"; };
 		AFE6EE691DD7AE7A00EE3F18 /* CameraView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CameraView.h; path = View/CameraView.h; sourceTree = "<group>"; };
 		AFE6EE6A1DD7AE7A00EE3F18 /* CameraView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CameraView.m; path = View/CameraView.m; sourceTree = "<group>"; };
@@ -95,6 +105,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF99F0911DE4CDA700022926 /* CoreLocation.framework in Frameworks */,
+				AF99F08F1DE4B18000022926 /* MapKit.framework in Frameworks */,
 				AFFDA4A71DD779600072D962 /* AVFoundation.framework in Frameworks */,
 				2C4F760C6601C4986D542E8B /* libPods-Vratis.a in Frameworks */,
 			);
@@ -114,6 +126,8 @@
 		59CDF64A01E7ECD9555A521D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AF99F0901DE4CDA700022926 /* CoreLocation.framework */,
+				AF99F08E1DE4B18000022926 /* MapKit.framework */,
 				AFFDA4A61DD779600072D962 /* AVFoundation.framework */,
 				5753916F993E6796A30FFE59 /* libPods-Vratis.a */,
 				28F9ACD5965345B4B09E128B /* libPods-VratisTests.a */,
@@ -190,6 +204,7 @@
 			children = (
 				AF78F8AA1DD120630012EA1E /* Page.h */,
 				AF78F8AB1DD120630012EA1E /* Page.m */,
+				AF99F0851DE4A96A00022926 /* Map View Controller */,
 				AFAEDFF81DC4B12D001584B6 /* Settings View Controller */,
 				AF4C96EA1DC11D84004961BC /* Camera View Controller */,
 				AF4C96E91DC11D75004961BC /* Root View Controller */,
@@ -236,6 +251,25 @@
 				AF605E9E1DD75A5800D38E8F /* SettingsTableDataSource.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		AF99F0851DE4A96A00022926 /* Map View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AF99F08C1DE4A9B400022926 /* Map View */,
+				AF99F0861DE4A99800022926 /* MapViewController.h */,
+				AF99F0871DE4A99800022926 /* MapViewController.m */,
+			);
+			name = "Map View Controller";
+			sourceTree = "<group>";
+		};
+		AF99F08C1DE4A9B400022926 /* Map View */ = {
+			isa = PBXGroup;
+			children = (
+				AF99F0891DE4A9AE00022926 /* MapView.h */,
+				AF99F08A1DE4A9AE00022926 /* MapView.m */,
+			);
+			name = "Map View";
 			sourceTree = "<group>";
 		};
 		AFAEDFF81DC4B12D001584B6 /* Settings View Controller */ = {
@@ -499,6 +533,7 @@
 				AF78F8B71DD120630012EA1E /* SettingsViewController.m in Sources */,
 				AFE6EE6F1DD7AE7A00EE3F18 /* SettingsTableViewCell.m in Sources */,
 				AF4C96C11DC117EE004961BC /* VratisAppDelegate.m in Sources */,
+				AF99F08B1DE4A9AE00022926 /* MapView.m in Sources */,
 				AF605E9F1DD75A5800D38E8F /* SettingsTableDataSource.m in Sources */,
 				AF78F8B11DD120630012EA1E /* RootModelString.m in Sources */,
 				AF4C96BE1DC117EE004961BC /* main.m in Sources */,
@@ -506,6 +541,7 @@
 				AF78F8B61DD120630012EA1E /* RootViewController.m in Sources */,
 				AFE6EE6E1DD7AE7A00EE3F18 /* CameraView.m in Sources */,
 				AF78F8B01DD120630012EA1E /* RootModel.m in Sources */,
+				AF99F0881DE4A99800022926 /* MapViewController.m in Sources */,
 				AFE6EE791DD7C26400EE3F18 /* PhotoCaptureDelegate.m in Sources */,
 				AF78F8B51DD120630012EA1E /* Page.m in Sources */,
 				AFE6EE781DD7C26400EE3F18 /* NSError+Description.m in Sources */,
@@ -578,6 +614,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -627,6 +664,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -652,6 +690,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = AD6M7L74H7;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Vratis/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -667,6 +706,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = AD6M7L74H7;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Vratis/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

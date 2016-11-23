@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16C32f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="t0S-FV-yts">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16C48b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="t0S-FV-yts">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -57,8 +57,9 @@
                             <view opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vjy-zM-RQr" customClass="CaptureView">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
-                                    <button clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UHk-0M-ALL" customClass="BFPaperButton">
+                                    <button clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UHk-0M-ALL">
                                         <rect key="frame" x="110" y="428" width="100" height="100"/>
+                                        <color key="backgroundColor" red="0.185" green="0.0" blue="1" alpha="0.48878297018348627" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="100" id="q4z-Mx-ciE"/>
                                             <constraint firstAttribute="height" constant="100" id="ujz-hp-lhd"/>
@@ -174,7 +175,7 @@
                                             <constraint firstAttribute="width" secondItem="cmj-yU-wL8" secondAttribute="height" multiplier="1:1" id="CVR-1v-aiP"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cE4-O8-4SA">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jan Kowalski" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cE4-O8-4SA">
                                         <rect key="frame" x="62" y="235" width="195" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -216,7 +217,50 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mDH-YL-xgF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1260" y="-253.2233883058471"/>
+            <point key="canvasLocation" x="2001" y="453"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="9zh-lo-pHL">
+            <objects>
+                <viewController storyboardIdentifier="MapVC" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Rhl-EW-bQp" customClass="MapViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1RX-pi-A2a"/>
+                        <viewControllerLayoutGuide type="bottom" id="cSc-u4-HYj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="MapV" id="ysX-wm-2BZ" customClass="MapView">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" pitchEnabled="NO" showsUserLocation="YES" showsBuildings="NO" showsCompass="NO" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fUq-zs-XlM">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </mapView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dpy-8R-wDm">
+                                <rect key="frame" x="0.0" y="0.0" width="20" height="568"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Dpy-8R-wDm" secondAttribute="trailing" constant="300" id="6FF-Nq-Yob"/>
+                            <constraint firstItem="fUq-zs-XlM" firstAttribute="top" secondItem="ysX-wm-2BZ" secondAttribute="top" id="6Ug-fh-gqx"/>
+                            <constraint firstItem="Dpy-8R-wDm" firstAttribute="leading" secondItem="fUq-zs-XlM" secondAttribute="leading" id="Mug-3o-Rqs"/>
+                            <constraint firstItem="Dpy-8R-wDm" firstAttribute="top" secondItem="fUq-zs-XlM" secondAttribute="top" id="XdH-EP-50s"/>
+                            <constraint firstItem="fUq-zs-XlM" firstAttribute="leading" secondItem="ysX-wm-2BZ" secondAttribute="leading" id="laz-gR-VeT"/>
+                            <constraint firstAttribute="trailing" secondItem="fUq-zs-XlM" secondAttribute="trailing" id="tq4-oe-3XR"/>
+                            <constraint firstItem="fUq-zs-XlM" firstAttribute="bottom" secondItem="cSc-u4-HYj" secondAttribute="top" id="xNP-x7-eDe"/>
+                            <constraint firstItem="Dpy-8R-wDm" firstAttribute="bottom" secondItem="cSc-u4-HYj" secondAttribute="top" id="zar-Ou-RFl"/>
+                        </constraints>
+                        <connections>
+                            <outlet property="map" destination="fUq-zs-XlM" id="2bE-GD-rUd"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="ysX-wm-2BZ" id="6Ct-cw-99j"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EIx-j3-QsG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2758.125" y="452.11267605633805"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="Ku0-wP-AFc">

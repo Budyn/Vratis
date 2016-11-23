@@ -14,5 +14,6 @@
                                      completed:(void (^)(PhotoCaptureDelegate *photoCaptureDelegate)) completed;
 
 @property (nonatomic, readonly) AVCapturePhotoSettings *requestedPhotoSettings;
+@property (nonatomic) UIImage *dataImage;
 
 @end
