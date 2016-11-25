@@ -23,6 +23,12 @@
 		AF78F8B51DD120630012EA1E /* Page.m in Sources */ = {isa = PBXBuildFile; fileRef = AF78F8AB1DD120630012EA1E /* Page.m */; };
 		AF78F8B61DD120630012EA1E /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF78F8AD1DD120630012EA1E /* RootViewController.m */; };
 		AF78F8B71DD120630012EA1E /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF78F8AF1DD120630012EA1E /* SettingsViewController.m */; };
+		AF864CB31DE77E42000CBDB7 /* WroclawDefaultLocation.gpx in Resources */ = {isa = PBXBuildFile; fileRef = AF864CB21DE77E42000CBDB7 /* WroclawDefaultLocation.gpx */; };
+		AF864CBA1DE792D1000CBDB7 /* MapModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AF864CB81DE792D1000CBDB7 /* MapModel.xcdatamodeld */; };
+		AF864CBC1DE79557000CBDB7 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF864CBB1DE79557000CBDB7 /* CoreData.framework */; };
+		AF864CBF1DE797B2000CBDB7 /* MapViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = AF864CBE1DE797B2000CBDB7 /* MapViewDataSource.m */; };
+		AF864CC21DE7999A000CBDB7 /* MOMapPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = AF864CC11DE7999A000CBDB7 /* MOMapPoint.m */; };
+		AF864CC51DE7B0CE000CBDB7 /* MapPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = AF864CC41DE7B0CE000CBDB7 /* MapPoint.m */; };
 		AF99F0881DE4A99800022926 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF99F0871DE4A99800022926 /* MapViewController.m */; };
 		AF99F08B1DE4A9AE00022926 /* MapView.m in Sources */ = {isa = PBXBuildFile; fileRef = AF99F08A1DE4A9AE00022926 /* MapView.m */; };
 		AF99F08F1DE4B18000022926 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF99F08E1DE4B18000022926 /* MapKit.framework */; };
@@ -80,6 +86,15 @@
 		AF78F8AD1DD120630012EA1E /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RootViewController.m; path = "View Controller/RootViewController.m"; sourceTree = "<group>"; };
 		AF78F8AE1DD120630012EA1E /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsViewController.h; path = "View Controller/SettingsViewController.h"; sourceTree = "<group>"; };
 		AF78F8AF1DD120630012EA1E /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsViewController.m; path = "View Controller/SettingsViewController.m"; sourceTree = "<group>"; };
+		AF864CB21DE77E42000CBDB7 /* WroclawDefaultLocation.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = WroclawDefaultLocation.gpx; path = ../WroclawDefaultLocation.gpx; sourceTree = "<group>"; };
+		AF864CB91DE792D1000CBDB7 /* MapModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MapModel.xcdatamodel; sourceTree = "<group>"; };
+		AF864CBB1DE79557000CBDB7 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		AF864CBD1DE797B2000CBDB7 /* MapViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewDataSource.h; sourceTree = "<group>"; };
+		AF864CBE1DE797B2000CBDB7 /* MapViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewDataSource.m; sourceTree = "<group>"; };
+		AF864CC01DE7999A000CBDB7 /* MOMapPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MOMapPoint.h; path = ../MOMapPoint.h; sourceTree = "<group>"; };
+		AF864CC11DE7999A000CBDB7 /* MOMapPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MOMapPoint.m; path = ../MOMapPoint.m; sourceTree = "<group>"; };
+		AF864CC31DE7B0CE000CBDB7 /* MapPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapPoint.h; sourceTree = "<group>"; };
+		AF864CC41DE7B0CE000CBDB7 /* MapPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapPoint.m; sourceTree = "<group>"; };
 		AF99F0861DE4A99800022926 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapViewController.h; path = ../MapViewController.h; sourceTree = "<group>"; };
 		AF99F0871DE4A99800022926 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MapViewController.m; path = ../MapViewController.m; sourceTree = "<group>"; };
 		AF99F0891DE4A9AE00022926 /* MapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapView.h; sourceTree = "<group>"; };
@@ -105,6 +120,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF864CBC1DE79557000CBDB7 /* CoreData.framework in Frameworks */,
 				AF99F0911DE4CDA700022926 /* CoreLocation.framework in Frameworks */,
 				AF99F08F1DE4B18000022926 /* MapKit.framework in Frameworks */,
 				AFFDA4A71DD779600072D962 /* AVFoundation.framework in Frameworks */,
@@ -126,6 +142,7 @@
 		59CDF64A01E7ECD9555A521D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AF864CBB1DE79557000CBDB7 /* CoreData.framework */,
 				AF99F0901DE4CDA700022926 /* CoreLocation.framework */,
 				AF99F08E1DE4B18000022926 /* MapKit.framework */,
 				AFFDA4A61DD779600072D962 /* AVFoundation.framework */,
@@ -253,9 +270,25 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		AF864CB41DE78EFA000CBDB7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AF864CB21DE77E42000CBDB7 /* WroclawDefaultLocation.gpx */,
+				AF864CB81DE792D1000CBDB7 /* MapModel.xcdatamodeld */,
+				AF864CC01DE7999A000CBDB7 /* MOMapPoint.h */,
+				AF864CC11DE7999A000CBDB7 /* MOMapPoint.m */,
+				AF864CC31DE7B0CE000CBDB7 /* MapPoint.h */,
+				AF864CC41DE7B0CE000CBDB7 /* MapPoint.m */,
+				AF864CBD1DE797B2000CBDB7 /* MapViewDataSource.h */,
+				AF864CBE1DE797B2000CBDB7 /* MapViewDataSource.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		AF99F0851DE4A96A00022926 /* Map View Controller */ = {
 			isa = PBXGroup;
 			children = (
+				AF864CB41DE78EFA000CBDB7 /* Model */,
 				AF99F08C1DE4A9B400022926 /* Map View */,
 				AF99F0861DE4A99800022926 /* MapViewController.h */,
 				AF99F0871DE4A99800022926 /* MapViewController.m */,
@@ -417,6 +450,7 @@
 			files = (
 				AF4C96CC1DC117EE004961BC /* LaunchScreen.storyboard in Resources */,
 				AFB5D2671DCFBA8600A35812 /* Media.xcassets in Resources */,
+				AF864CB31DE77E42000CBDB7 /* WroclawDefaultLocation.gpx in Resources */,
 				AF4C96C71DC117EE004961BC /* Camera.storyboard in Resources */,
 				AFE6EE731DD7B37D00EE3F18 /* UserDefaults.plist in Resources */,
 			);
@@ -539,12 +573,16 @@
 				AF4C96BE1DC117EE004961BC /* main.m in Sources */,
 				AF78F8B21DD120630012EA1E /* CaptureView.m in Sources */,
 				AF78F8B61DD120630012EA1E /* RootViewController.m in Sources */,
+				AF864CC21DE7999A000CBDB7 /* MOMapPoint.m in Sources */,
 				AFE6EE6E1DD7AE7A00EE3F18 /* CameraView.m in Sources */,
 				AF78F8B01DD120630012EA1E /* RootModel.m in Sources */,
 				AF99F0881DE4A99800022926 /* MapViewController.m in Sources */,
+				AF864CC51DE7B0CE000CBDB7 /* MapPoint.m in Sources */,
 				AFE6EE791DD7C26400EE3F18 /* PhotoCaptureDelegate.m in Sources */,
 				AF78F8B51DD120630012EA1E /* Page.m in Sources */,
 				AFE6EE781DD7C26400EE3F18 /* NSError+Description.m in Sources */,
+				AF864CBA1DE792D1000CBDB7 /* MapModel.xcdatamodeld in Sources */,
+				AF864CBF1DE797B2000CBDB7 /* MapViewDataSource.m in Sources */,
 				AF78F8B31DD120630012EA1E /* SettingsView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -774,6 +812,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		AF864CB81DE792D1000CBDB7 /* MapModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				AF864CB91DE792D1000CBDB7 /* MapModel.xcdatamodel */,
+			);
+			currentVersion = AF864CB91DE792D1000CBDB7 /* MapModel.xcdatamodel */;
+			name = MapModel.xcdatamodeld;
+			path = ../MapModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = AF4C96B11DC117EE004961BC /* Project object */;
 }

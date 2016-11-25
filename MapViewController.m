@@ -8,6 +8,7 @@
 
 #import "MapViewController.h"
 #import "MapView.h"
+#import "MapViewDataSource.h"
 
 @interface MapViewController ()
 @property (strong, nonatomic) IBOutlet MapView *mapView;
@@ -18,12 +19,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark Setters & Getters

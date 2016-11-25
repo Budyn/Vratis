@@ -6,7 +6,7 @@
 //  Copyright © 2016 Budyn&Friends. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 #import "Page.h"
 
 @interface MapViewController : Page

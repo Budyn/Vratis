@@ -6,11 +6,10 @@
 //  Copyright © 2016 Budyn&Friends. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 
 @interface VratisAppDelegate : UIResponder <UIApplicationDelegate>
 @property (strong, nonatomic) UIWindow *window;
-
 
 @end
 

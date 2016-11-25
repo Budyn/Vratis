@@ -9,12 +9,14 @@
 @import MapKit;
 @import UIKit;
 #import "MapView.h"
+#import "MapPoint.h"
 
 #define wroclawLatitude 51.1098244
 #define wroclawLongitude 17.0290703
 
 @interface MapView() <MKMapViewDelegate>
 @property (weak, nonatomic) IBOutlet MKMapView *map;
+@property (strong, nonatomic) NSArray <MapPoint *> *pointArray;
 
 @end
 
@@ -26,12 +28,16 @@
     MKCoordinateRegion wroclawRegion = MKCoordinateRegionMakeWithDistance(wroclawLocation, 1000, 1000);
     self.map.region = wroclawRegion;
     
-    MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
-    point.coordinate = wroclawLocation;
-    point.title = @"Plac Solny";
-
-    [self.map addAnnotation:point];
+    self.mapSource = [[MapViewDataSource alloc] init];
+    self.pointArray = [self.mapSource fetchMapPoints];
     
+    for (MapPoint *point in self.pointArray) {
+        CLLocationCoordinate2D pinLocation = CLLocationCoordinate2DMake([point latitude], [point longitude]);
+        MKPointAnnotation *pinPoint = [[MKPointAnnotation alloc] init];
+        pinPoint.title = [point name];
+        pinPoint.coordinate = pinLocation;
+        [self.map addAnnotation:pinPoint];
+    }
 }
 
 /*

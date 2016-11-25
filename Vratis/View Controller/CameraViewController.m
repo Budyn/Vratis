@@ -40,8 +40,12 @@
     [self.cameraView setCaptureSession:self.session];
     
     self.sessionQueue = dispatch_queue_create("session queue", DISPATCH_QUEUE_SERIAL);
-    self.isCameraAllowed = [[NSUserDefaults standardUserDefaults] boolForKey:@"isCameraAllowed"];
     self.isSetupSuccessful = YES;
+    
+    self.isCameraAllowed = [[NSUserDefaults standardUserDefaults] boolForKey:@"isCameraAllowed"];
+    
+    dispatch_suspend(self.sessionQueue);
+    [self configureCameraAccess];
     
     dispatch_async(self.sessionQueue, ^{
         [self configureCaptureSession];
@@ -65,6 +69,35 @@
             [self.session stopRunning];
         }
     });
+}
+
+- (void)configureCameraAccess {
+    if (!self.isCameraAllowed) {
+        switch([AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo]){
+            case AVAuthorizationStatusAuthorized:
+            {
+                NSLog(@"Camera is allowed");
+                break;
+            }
+            case AVAuthorizationStatusNotDetermined:
+            {
+                NSLog(@"Camera will be determined");
+                [AVCaptureDevice requestAccessForMediaType:AVMediaTypeVideo completionHandler:^(BOOL isAllowed) {
+                    if (isAllowed) {
+                        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isCameraAllowed"];
+                        self.isCameraAllowed = YES;
+                    }
+                    dispatch_resume(self.sessionQueue);
+                }];
+                break;
+            }
+            default:
+            {
+                NSLog(@"Cammera is NOT allowed");
+                [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"isCameraAllowed"];
+            }
+        }
+    }
 }
 
 - (void)configureCaptureSession {
