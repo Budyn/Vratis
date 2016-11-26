@@ -13,4 +13,5 @@
 @interface MapViewDataSource : NSObject
 @property (strong, nonatomic) NSArray <MapPoint *> *mapPoints;
 
+- (instancetype)initWithContext:(NSManagedObjectContext *)mapContext;
 @end

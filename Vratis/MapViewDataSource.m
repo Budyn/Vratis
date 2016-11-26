@@ -18,12 +18,12 @@
 @end
 
 @implementation MapViewDataSource
-- (instancetype)init {
+- (instancetype)initWithContext:(NSManagedObjectContext *)mapContext {
     self = [super init];
     if (self) {
         _fetchQueue = dispatch_queue_create("fetch-queue", DISPATCH_QUEUE_SERIAL);
         _mapPoints = [NSArray array];
-        [self initializeCoreDataStack];
+        _mapContext = mapContext;
         
         dispatch_sync(_fetchQueue, ^{
             [self createMapPoints];
@@ -71,35 +71,6 @@
     if (![_mapContext save:&error]) {
         NSAssert(NO, @"Error saving context: %@\n%@", [error localizedDescription], [error userInfo]);
     }
-}
-
-- (void)initializeCoreDataStack {
-    // NSManagedObjectModel
-    NSURL *mapModelURL = [[NSBundle mainBundle] URLForResource:@"MapModel" withExtension:@"momd"];
-    NSManagedObjectModel *model = [[NSManagedObjectModel alloc] initWithContentsOfURL:mapModelURL];
-    
-    //NSPersistantCordinator
-    NSPersistentStoreCoordinator *coordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:model];
-    
-    //NSManagedObjectContext
-    NSManagedObjectContext *context = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
-    context.persistentStoreCoordinator = coordinator;
-    _mapContext = context;
-    
-    // Document Directory
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSURL *documentsURL = [[fileManager URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
-    NSURL *persistantStoreURL = [documentsURL URLByAppendingPathComponent:@"MapModel.sqlite"];
-    
-
-    NSError *error = nil;
-    NSPersistentStoreCoordinator * contextCoordinator = _mapContext.persistentStoreCoordinator;
-    NSPersistentStore *store = [contextCoordinator addPersistentStoreWithType:NSSQLiteStoreType
-                                                         configuration:nil
-                                                                   URL:persistantStoreURL
-                                                               options:nil
-                                                                 error:&error];
-    NSAssert(store != nil, @"Error initializing PSC: %@\n%@", [error localizedDescription], [error userInfo]);
 }
 
 - (void)initizalizeFetchResultController {

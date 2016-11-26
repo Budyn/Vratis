@@ -23,6 +23,8 @@
 @interface RootModel()
 @property (strong, nonatomic) UIStoryboard *cameraStoryboard;
 
+@property (strong, nonatomic) NSManagedObjectContext *mapContext;
+
 @end
 
 @implementation RootModel
@@ -30,6 +32,8 @@
     if (self = [super init]) {
         _cameraStoryboard = [UIStoryboard storyboardWithName:@"Camera" bundle:[NSBundle mainBundle]];
         _pageTitles = @[settingsViewPageTitle, cameraViewPageTitle, mapViewPageTitle];
+        
+        [self initializeCoreDataStack];
     }
     return self;
 }
@@ -91,6 +95,7 @@
             MapViewController *mapPage = (MapViewController *)[self.cameraStoryboard instantiateViewControllerWithIdentifier:@"MapVC"];
             mapPage.pageIndex = pageIndex;
             mapPage.title = [self.pageTitles objectAtIndex:pageIndex];
+            mapPage.mapContext = self.mapContext;
             
             return mapPage;
         }
@@ -99,6 +104,37 @@
         }
     }
     return nil;
+}
+
+#pragma mark Core Data
+- (void)initializeCoreDataStack {
+    // NSManagedObjectModel
+    NSURL *mapModelURL = [[NSBundle mainBundle] URLForResource:@"MapModel" withExtension:@"momd"];
+    NSManagedObjectModel *model = [[NSManagedObjectModel alloc] initWithContentsOfURL:mapModelURL];
+    
+    //NSPersistantCordinator
+    NSPersistentStoreCoordinator *coordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:model];
+    
+    //NSManagedObjectContext
+    NSManagedObjectContext *context = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
+    context.persistentStoreCoordinator = coordinator;
+    _mapContext = context;
+    
+    // Document Directory
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSURL *documentsURL = [[fileManager URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+    NSURL *persistantStoreURL = [documentsURL URLByAppendingPathComponent:@"MapModel.sqlite"];
+    
+    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void) {
+        NSError *error = nil;
+        NSPersistentStoreCoordinator * contextCoordinator = _mapContext.persistentStoreCoordinator;
+        NSPersistentStore *store = [contextCoordinator addPersistentStoreWithType:NSSQLiteStoreType
+                                                                    configuration:nil
+                                                                              URL:persistantStoreURL
+                                                                          options:nil
+                                                                            error:&error];
+        NSAssert(store != nil, @"Error initializing PSC: %@\n%@", [error localizedDescription], [error userInfo]);
+    });
 }
 
 @end

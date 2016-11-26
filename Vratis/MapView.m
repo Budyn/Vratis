@@ -24,6 +24,7 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     [self formMapCenterPosition];
+    self.map.delegate = self;
 }
 
 - (void)formMapCenterPosition {
@@ -45,6 +46,16 @@
     } else {
         NSLog(@"Map points array is empty.");
     }
+}
+
+#pragma mark MKMapViewDelegate
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
+    if ([annotation isKindOfClass:[MKUserLocation class]]) {
+        return nil;
+    }
+    MKPinAnnotationView *annotationView = [[MKPinAnnotationView alloc] init];
+    annotationView.pinTintColor = [UIColor whiteColor];
+    return annotationView;
 }
 
 @end
