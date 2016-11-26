@@ -6,9 +6,10 @@
 //  Copyright © 2016 Budyn&Friends. All rights reserved.
 //
 
-#import "MapViewDataSource.h"
+@import CoreLocation;
+#import "MapPoint.h"
 
 @interface MapView : UIView
-@property (strong, nonatomic) MapViewDataSource *mapSource;
+- (void)updateMapWithPoints:(NSArray <MapPoint *> *)points;
 
 @end

@@ -44,10 +44,8 @@
     
     self.isCameraAllowed = [[NSUserDefaults standardUserDefaults] boolForKey:@"isCameraAllowed"];
     
-    dispatch_suspend(self.sessionQueue);
-    [self configureCameraAccess];
-    
     dispatch_async(self.sessionQueue, ^{
+        [self configureCameraAccess];
         [self configureCaptureSession];
     });
 }
@@ -72,6 +70,7 @@
 }
 
 - (void)configureCameraAccess {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     if (!self.isCameraAllowed) {
         switch([AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo]){
             case AVAuthorizationStatusAuthorized:
@@ -81,10 +80,12 @@
             }
             case AVAuthorizationStatusNotDetermined:
             {
+                dispatch_suspend(self.sessionQueue);
                 NSLog(@"Camera will be determined");
                 [AVCaptureDevice requestAccessForMediaType:AVMediaTypeVideo completionHandler:^(BOOL isAllowed) {
                     if (isAllowed) {
-                        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isCameraAllowed"];
+                        [defaults setBool:YES forKey:@"isCameraAllowed"];
+                        [defaults synchronize];
                         self.isCameraAllowed = YES;
                     }
                     dispatch_resume(self.sessionQueue);
@@ -94,7 +95,8 @@
             default:
             {
                 NSLog(@"Cammera is NOT allowed");
-                [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"isCameraAllowed"];
+                [defaults setBool:NO forKey:@"isCameraAllowed"];
+                [defaults synchronize];
             }
         }
     }
@@ -174,6 +176,7 @@
 #pragma mark IBActions
 - (IBAction)photoButtonTapped:(id)sender {
     NSLog(@"Photo button tapped");
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"photoCreated" object:nil];
     dispatch_async(self.sessionQueue, ^{
         AVCapturePhotoSettings *photoSettings = [AVCapturePhotoSettings photoSettings];
         photoSettings.flashMode = AVCaptureFlashModeAuto;

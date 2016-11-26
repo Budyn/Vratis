@@ -6,8 +6,8 @@
 	<string>NO</string>
 	<key>isCameraAllowed</key>
 	<false/>
-	<key>isMapUpdated</key>
-	<false/>
+	<key>isMapFirstLaunched</key>
+	<true/>
 	<key>isColdStart</key>
 	<true/>
 </dict>

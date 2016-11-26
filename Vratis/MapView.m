@@ -16,7 +16,6 @@
 
 @interface MapView() <MKMapViewDelegate>
 @property (weak, nonatomic) IBOutlet MKMapView *map;
-@property (strong, nonatomic) NSArray <MapPoint *> *pointArray;
 
 @end
 
@@ -24,28 +23,28 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    CLLocationCoordinate2D wroclawLocation = CLLocationCoordinate2DMake(wroclawLatitude, wroclawLongitude);
-    MKCoordinateRegion wroclawRegion = MKCoordinateRegionMakeWithDistance(wroclawLocation, 1000, 1000);
-    self.map.region = wroclawRegion;
-    
-    self.mapSource = [[MapViewDataSource alloc] init];
-    self.pointArray = [self.mapSource fetchMapPoints];
-    
-    for (MapPoint *point in self.pointArray) {
-        CLLocationCoordinate2D pinLocation = CLLocationCoordinate2DMake([point latitude], [point longitude]);
-        MKPointAnnotation *pinPoint = [[MKPointAnnotation alloc] init];
-        pinPoint.title = [point name];
-        pinPoint.coordinate = pinLocation;
-        [self.map addAnnotation:pinPoint];
-    }
+    [self formMapCenterPosition];
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+- (void)formMapCenterPosition {
+    CLLocationCoordinate2D cityLocation = CLLocationCoordinate2DMake(wroclawLatitude, wroclawLongitude);
+    MKCoordinateRegion cityRegion = MKCoordinateRegionMakeWithDistance(cityLocation, 1000, 1000);
+    _map.region = cityRegion;
 }
-*/
+
+#pragma mark Map Update
+- (void)updateMapWithPoints:(NSArray<MapPoint *> *)points {
+    if (points.count > 0) {
+        for (MapPoint *point in points) {
+            CLLocationCoordinate2D pointLocation = CLLocationCoordinate2DMake(point.latitude, point.longitude);
+            MKPointAnnotation *pin = [[MKPointAnnotation alloc] init];
+            pin.coordinate = pointLocation;
+            pin.title = point.name;
+            [self.map addAnnotation:pin];
+        }
+    } else {
+        NSLog(@"Map points array is empty.");
+    }
+}
 
 @end

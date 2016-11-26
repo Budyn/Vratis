@@ -11,6 +11,6 @@
 #import "MapPoint.h"
 
 @interface MapViewDataSource : NSObject
-- (NSArray <MapPoint *> *)fetchMapPoints;
+@property (strong, nonatomic) NSArray <MapPoint *> *mapPoints;
 
 @end

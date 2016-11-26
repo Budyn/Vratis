@@ -10,6 +10,7 @@
 
 @interface VratisAppDelegate : UIResponder <UIApplicationDelegate>
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) NSManagedObjectContext *mapContext;
 
 @end
 
