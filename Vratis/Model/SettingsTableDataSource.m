@@ -21,14 +21,11 @@
     self = [super init];
     if (self) {
         _settingsTitle = @[@"Profile",
-                           @"Recently visited",
-                           @"Your places"];
+                           @"Recently visited"];
         _settingsSubtitle = @[@"Your personal information",
-                           @"Recently visited places",
-                           @"Places that you love"];
+                           @"Recently visited places"];
         _settingsIcon = @[@"settings-profile",
-                          @"settings-place",
-                          @"settings-like"];
+                          @"settings-place"];
         
     }
     return self;
