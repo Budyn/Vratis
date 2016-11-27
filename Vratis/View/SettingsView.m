@@ -11,8 +11,6 @@
 
 @interface SettingsView()
 @property (weak, nonatomic) IBOutlet UITableView *settingsTableView;
-@property (weak, nonatomic) IBOutlet UIImageView *profileImage;
-@property (weak, nonatomic) IBOutlet UILabel *profileNameLabel;
 
 @end
 
@@ -20,7 +18,6 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    self.profileImage.image = [UIImage imageNamed:@"profile-default"];
 }
 
 - (void)reloadModel {

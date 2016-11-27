@@ -33,6 +33,7 @@
 		AF99F0911DE4CDA700022926 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF99F0901DE4CDA700022926 /* CoreLocation.framework */; };
 		AFB5D2671DCFBA8600A35812 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFB5D2661DCFBA8600A35812 /* Media.xcassets */; };
 		AFCBE9F11DEA036D00D2F978 /* NotificationString.m in Sources */ = {isa = PBXBuildFile; fileRef = AFCBE9F01DEA036D00D2F978 /* NotificationString.m */; };
+		AFCBEA121DEB09B800D2F978 /* SettingsNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFCBEA111DEB09B800D2F978 /* SettingsNavigationController.m */; };
 		AFE6EE6E1DD7AE7A00EE3F18 /* CameraView.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE6EE6A1DD7AE7A00EE3F18 /* CameraView.m */; };
 		AFE6EE6F1DD7AE7A00EE3F18 /* SettingsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE6EE6C1DD7AE7A00EE3F18 /* SettingsTableViewCell.m */; };
 		AFE6EE731DD7B37D00EE3F18 /* UserDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = AFE6EE721DD7B37D00EE3F18 /* UserDefaults.plist */; };
@@ -101,6 +102,8 @@
 		AFB5D2661DCFBA8600A35812 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Media.xcassets; path = ../Media.xcassets; sourceTree = "<group>"; };
 		AFCBE9EF1DEA036D00D2F978 /* NotificationString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationString.h; sourceTree = "<group>"; };
 		AFCBE9F01DEA036D00D2F978 /* NotificationString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationString.m; sourceTree = "<group>"; };
+		AFCBEA101DEB09B800D2F978 /* SettingsNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsNavigationController.h; path = ../SettingsNavigationController.h; sourceTree = "<group>"; };
+		AFCBEA111DEB09B800D2F978 /* SettingsNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsNavigationController.m; path = ../SettingsNavigationController.m; sourceTree = "<group>"; };
 		AFE6EE691DD7AE7A00EE3F18 /* CameraView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CameraView.h; path = View/CameraView.h; sourceTree = "<group>"; };
 		AFE6EE6A1DD7AE7A00EE3F18 /* CameraView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CameraView.m; path = View/CameraView.m; sourceTree = "<group>"; };
 		AFE6EE6B1DD7AE7A00EE3F18 /* SettingsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsTableViewCell.h; path = View/SettingsTableViewCell.h; sourceTree = "<group>"; };
@@ -313,6 +316,8 @@
 				AFAEDFF91DC4B1AE001584B6 /* Settings View */,
 				AF78F8AE1DD120630012EA1E /* SettingsViewController.h */,
 				AF78F8AF1DD120630012EA1E /* SettingsViewController.m */,
+				AFCBEA101DEB09B800D2F978 /* SettingsNavigationController.h */,
+				AFCBEA111DEB09B800D2F978 /* SettingsNavigationController.m */,
 			);
 			name = "Settings View Controller";
 			sourceTree = "<group>";
@@ -570,6 +575,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFCBEA121DEB09B800D2F978 /* SettingsNavigationController.m in Sources */,
 				AF78F8B41DD120630012EA1E /* CameraViewController.m in Sources */,
 				AF78F8B71DD120630012EA1E /* SettingsViewController.m in Sources */,
 				AFE6EE6F1DD7AE7A00EE3F18 /* SettingsTableViewCell.m in Sources */,

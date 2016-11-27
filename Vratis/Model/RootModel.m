@@ -13,7 +13,7 @@
 
 #import "Page.h"
 #import "CameraViewController.h"
-#import "SettingsViewController.h"
+#import "SettingsNavigationController.h"
 #import "MapViewController.h"
 
 #define kSettingsVCIndex 0
@@ -44,6 +44,11 @@
 
 #pragma mark UIPageViewControllerDataSource
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController {
+    
+    if ([viewController isKindOfClass:[UINavigationController class]]) {
+        viewController = [[(UINavigationController *)viewController viewControllers] firstObject];
+    }
+    
     NSUInteger index = [((Page *)viewController) pageIndex];
     if (index == 0 || index == NSNotFound) {
         return nil;
@@ -53,6 +58,11 @@
 }
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController {
+    
+    if ([viewController isKindOfClass:[UINavigationController class]]) {
+        viewController = [[(UINavigationController *)viewController viewControllers] firstObject];
+    }
+    
     NSUInteger index = [((Page *)viewController) pageIndex];
     if (index == NSNotFound) {
         return nil;
@@ -77,16 +87,15 @@
     switch (pageIndex) {
         case kSettingsVCIndex:
         {
-            SettingsViewController *settingsPage = (SettingsViewController *)[self.cameraStoryboard instantiateViewControllerWithIdentifier:@"SettingsVC"];
+            SettingsNavigationController *settingsPage = (SettingsNavigationController *)[self.cameraStoryboard instantiateViewControllerWithIdentifier:@"SettingsNC"];
             settingsPage.pageIndex = pageIndex;
-            settingsPage.title = [self.pageTitles objectAtIndex:pageIndex];
+        
             return settingsPage;
         }
         case kCameraVCIndex:
         {
             CameraViewController *cameraPage = (CameraViewController *)[self.cameraStoryboard instantiateViewControllerWithIdentifier:@"CameraVC"];
             cameraPage.pageIndex = pageIndex;
-            cameraPage.title = [self.pageTitles objectAtIndex:pageIndex];
             
             return cameraPage;
         }
@@ -94,7 +103,6 @@
         {
             MapViewController *mapPage = (MapViewController *)[self.cameraStoryboard instantiateViewControllerWithIdentifier:@"MapVC"];
             mapPage.pageIndex = pageIndex;
-            mapPage.title = [self.pageTitles objectAtIndex:pageIndex];
             mapPage.mapContext = self.mapContext;
             
             return mapPage;

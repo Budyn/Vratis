@@ -20,6 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.settingsTableDataSource = [[SettingsTableDataSource alloc] init];
     [self.settingsView setSettingsTableDataSource:self.settingsTableDataSource];
     [self.settingsView reloadModel];
