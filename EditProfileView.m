@@ -22,6 +22,9 @@
     self.nameTextField.tag = nameTextFieldTag;
     self.ageTextField.tag = ageTextFieldTag;
     self.addressTextField.tag = addressTextFieldTag;
+    
+    self.saveButton.layer.cornerRadius = 10;
+    self.saveButton.clipsToBounds = YES;
 }
 
 - (void)initializeTextFieldDelegate:(id<UITextFieldDelegate>)delegate {
@@ -31,12 +34,13 @@
     self.ageTextField.delegate = delegate;
     self.addressTextField.delegate = delegate;
 }
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+
+- (void)initializeAvatarCollectionViewDelegate:(id<UICollectionViewDelegate>)delegate dataSource:(id<UICollectionViewDataSource>)dataSource {
+    NSAssert(delegate && dataSource, @"Avatar collection view delegate or dataSource will be empty");
+    
+    self.avatarCollectionView.delegate = delegate;
+    self.avatarCollectionView.dataSource = dataSource;
+    [self.avatarCollectionView reloadData];
 }
-*/
 
 @end

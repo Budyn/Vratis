@@ -16,5 +16,6 @@ typedef NS_ENUM(NSUInteger, textFieldTag) {
 
 @interface EditProfileView : UIView
 - (void)initializeTextFieldDelegate:(id<UITextFieldDelegate>)delegate;
+- (void)initializeAvatarCollectionViewDelegate:(id<UICollectionViewDelegate>)delegate dataSource:(id<UICollectionViewDataSource>)dataSource;
 
 @end

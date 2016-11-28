@@ -44,6 +44,9 @@
         if ((userInfoObject = [userInfo objectForKey:@"address"])) {
             self.addressInputLabel.text = userInfoObject;
         }
+        if ((userInfoObject = [userInfo objectForKey:@"avatar"])) {
+            self.avatarImageView.image = [UIImage imageNamed:userInfoObject];
+        }
     } else {
         NSLog(@"User info dictionary is either empty or nil.");
     }

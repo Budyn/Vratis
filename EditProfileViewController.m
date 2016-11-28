@@ -9,11 +9,15 @@
 #import "EditProfileViewController.h"
 #import "EditProfileView.h"
 
-@interface EditProfileViewController () <UITextFieldDelegate>
+#import "AvatarCollectionDataSource.h"
+
+@interface EditProfileViewController () <UITextFieldDelegate, UICollectionViewDelegate>
 @property (strong, nonatomic) IBOutlet EditProfileView *editProfileView;
 @property (copy, nonatomic) NSString *name;
 @property (copy, nonatomic) NSString *age;
 @property (copy, nonatomic) NSString *address;
+@property (copy, nonatomic) NSString *avatarName;
+@property (strong, nonatomic) AvatarCollectionDataSource *avatarDataSource;
 
 @end
 
@@ -22,6 +26,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.editProfileView initializeTextFieldDelegate:self];
+    self.avatarDataSource = [[AvatarCollectionDataSource alloc] init];
+    [self.editProfileView initializeAvatarCollectionViewDelegate:self dataSource:self.avatarDataSource];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -43,6 +49,10 @@
         
         if (self.address) {
             [userInfo setObject:self.address forKey:@"address"];
+        }
+        
+        if (self.avatarName) {
+            [userInfo setObject:self.avatarName forKey:@"avatar"];
         }
         
         [self.delegate performSelector:@selector(profileUpdatedWithUserInfo:) withObject:userInfo];
@@ -76,5 +86,9 @@
     return YES;
 }
 
+#pragma mark UICollectionViewDelegate
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    self.avatarName = [self.avatarDataSource.avatarName objectAtIndex:indexPath.row];
+}
 
 @end
