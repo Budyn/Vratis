@@ -32,5 +32,11 @@
     }
     NSAssert(settingsTableDataSource, @"Settings table data source is nil");
 }
+- (void)setSettingsTableDelegate:(id<UITableViewDelegate>)settingsTableDelegate {
+    if (settingsTableDelegate) {
+        self.settingsTableView.delegate = settingsTableDelegate;
+    }
+    NSAssert(settingsTableDelegate, @"Settings table delegate is nil");
+}
 
 @end

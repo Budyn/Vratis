@@ -10,7 +10,12 @@
 #import "SettingsView.h"
 #import "SettingsTableDataSource.h"
 
-@interface SettingsViewController ()
+typedef NS_ENUM(NSUInteger, CellType) {
+    ProfileCell = 0,
+    PlacesCell,
+};
+
+@interface SettingsViewController () <UITableViewDelegate>
 @property (strong, nonatomic) IBOutlet SettingsView *settingsView;
 @property (strong, nonatomic) SettingsTableDataSource *settingsTableDataSource;
 
@@ -23,12 +28,13 @@
     
     self.settingsTableDataSource = [[SettingsTableDataSource alloc] init];
     [self.settingsView setSettingsTableDataSource:self.settingsTableDataSource];
+    [self.settingsView setSettingsTableDelegate:self];
+    
     [self.settingsView reloadModel];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark Setters & Getters
@@ -36,14 +42,18 @@
     return (SettingsView *)self.view;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma UITableViewDelegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row == ProfileCell) {
+        [self performSegueWithIdentifier:@"profileSegue" sender:nil];
+    } else if (indexPath.row == PlacesCell) {
+        [self performSegueWithIdentifier:@"placeSegue" sender:nil];
+    }
 }
-*/
+
+#pragma mark - Navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+
+}
 
 @end

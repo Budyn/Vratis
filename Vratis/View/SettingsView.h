@@ -10,6 +10,7 @@
 
 @interface SettingsView : UIView
 - (void)setSettingsTableDataSource:(id<UITableViewDataSource>)settingsTableDataSource;
+- (void)setSettingsTableDelegate:(id<UITableViewDelegate>)settingsTableDelegate;
 - (void)reloadModel;
 
 @end
