@@ -5,8 +5,10 @@
 //  Created by Daniel Budynski on 26/10/2016.
 //  Copyright © 2016 Budyn&Friends. All rights reserved.
 //
+@import Photos;
 
 #import "VratisAppDelegate.h"
+#import "NSError+Description.h"
 
 @interface VratisAppDelegate ()
 
@@ -25,6 +27,17 @@
     if (firstLaunch) {
         [defaults setBool:NO forKey:@"isColdStart"];
         [defaults synchronize];
+        
+        PHPhotoLibrary *library = [PHPhotoLibrary sharedPhotoLibrary];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [library performChanges:^{
+                [PHAssetCollectionChangeRequest creationRequestForAssetCollectionWithTitle:@"Vratis"];
+            } completionHandler:^(BOOL success, NSError *error){
+                if (!success || !error) {
+                    [error fullDescription];
+                }
+            }];
+        });
     }
     
     return YES;

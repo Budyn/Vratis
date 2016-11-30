@@ -61,14 +61,27 @@
         [self didFinish];
         return;
     }
-
     
     [PHPhotoLibrary requestAuthorization:^( PHAuthorizationStatus status ) {
         if ( status == PHAuthorizationStatusAuthorized ) {
             [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
-                PHAssetCreationRequest *creationRequest = [PHAssetCreationRequest creationRequestForAsset];
-                [creationRequest addResourceWithType:PHAssetResourceTypePhoto data:self.photoData options:nil];
-            } completionHandler:^( BOOL success, NSError * _Nullable error ) {
+                // TODO: HANDLE DELETION OF THE FOLDER
+                PHFetchOptions *fetchOptions = [[PHFetchOptions alloc] init];
+                fetchOptions.predicate = [NSPredicate predicateWithFormat:@"title = %@", @"Vratis"];
+                PHAssetCollection *collection = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeAlbum
+                                                                      subtype:PHAssetCollectionSubtypeAny
+                                                                      options:fetchOptions].firstObject;
+                
+                PHAssetChangeRequest *creationRequest = [PHAssetCreationRequest creationRequestForAssetFromImage:[UIImage imageWithData:self.photoData]];
+                PHObjectPlaceholder *placeholder = creationRequest.placeholderForCreatedAsset;
+                
+                PHFetchResult *photosAsset = [PHAsset fetchAssetsInAssetCollection:collection options:nil];
+
+                PHAssetCollectionChangeRequest *albumChangeRequest = [PHAssetCollectionChangeRequest changeRequestForAssetCollection:collection
+                                                                                                                              assets:photosAsset];
+                [albumChangeRequest addAssets:@[placeholder]];
+    
+                 } completionHandler:^( BOOL success, NSError * _Nullable error ) {
                 if (!success) {
                     NSLog( @"Error occurred while saving photo to photo library: %@", error );
                 }

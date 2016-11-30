@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		2C4F760C6601C4986D542E8B /* libPods-Vratis.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5753916F993E6796A30FFE59 /* libPods-Vratis.a */; };
 		2FBE7E8D853DB3283B932555 /* libPods-VratisTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 28F9ACD5965345B4B09E128B /* libPods-VratisTests.a */; };
+		AF0E86291DEF1EF30010857D /* DatabaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF0E86281DEF1EF30010857D /* DatabaseViewController.m */; };
+		AF0E86361DEF1F9C0010857D /* DatabaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = AF0E86351DEF1F9C0010857D /* DatabaseView.m */; };
+		AF0E86391DEF26E20010857D /* DatabaseTableDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = AF0E86381DEF26E20010857D /* DatabaseTableDataSource.m */; };
+		AF0E863D1DEF284A0010857D /* DatabaseTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AF0E863C1DEF284A0010857D /* DatabaseTableCell.m */; };
 		AF4C96BE1DC117EE004961BC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AF4C96BD1DC117EE004961BC /* main.m */; };
 		AF4C96C11DC117EE004961BC /* VratisAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AF4C96C01DC117EE004961BC /* VratisAppDelegate.m */; };
 		AF4C96C71DC117EE004961BC /* Camera.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF4C96C51DC117EE004961BC /* Camera.storyboard */; };
@@ -67,6 +71,14 @@
 		28F9ACD5965345B4B09E128B /* libPods-VratisTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-VratisTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5753916F993E6796A30FFE59 /* libPods-Vratis.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Vratis.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		79DAA62CF828877EC0757B93 /* Pods-VratisTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VratisTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VratisTests/Pods-VratisTests.debug.xcconfig"; sourceTree = "<group>"; };
+		AF0E86271DEF1EF30010857D /* DatabaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DatabaseViewController.h; path = ../DatabaseViewController.h; sourceTree = "<group>"; };
+		AF0E86281DEF1EF30010857D /* DatabaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DatabaseViewController.m; path = ../DatabaseViewController.m; sourceTree = "<group>"; };
+		AF0E86341DEF1F9C0010857D /* DatabaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DatabaseView.h; path = ../DatabaseView.h; sourceTree = "<group>"; };
+		AF0E86351DEF1F9C0010857D /* DatabaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DatabaseView.m; path = ../DatabaseView.m; sourceTree = "<group>"; };
+		AF0E86371DEF26E20010857D /* DatabaseTableDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatabaseTableDataSource.h; sourceTree = "<group>"; };
+		AF0E86381DEF26E20010857D /* DatabaseTableDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatabaseTableDataSource.m; sourceTree = "<group>"; };
+		AF0E863B1DEF284A0010857D /* DatabaseTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DatabaseTableCell.h; path = ../DatabaseTableCell.h; sourceTree = "<group>"; };
+		AF0E863C1DEF284A0010857D /* DatabaseTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DatabaseTableCell.m; path = ../DatabaseTableCell.m; sourceTree = "<group>"; };
 		AF4C96B91DC117EE004961BC /* Vratis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vratis.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF4C96BD1DC117EE004961BC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AF4C96BF1DC117EE004961BC /* VratisAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VratisAppDelegate.h; sourceTree = "<group>"; };
@@ -180,6 +192,52 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		AF0E86231DEF18BA0010857D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		AF0E862A1DEF1F050010857D /* OpenCVDataBase */ = {
+			isa = PBXGroup;
+			children = (
+				AF0E863A1DEF26F50010857D /* Database Model */,
+				AF0E86301DEF1F3F0010857D /* Database View */,
+				AF0E862B1DEF1F140010857D /* DataBase ViewController */,
+			);
+			name = OpenCVDataBase;
+			sourceTree = "<group>";
+		};
+		AF0E862B1DEF1F140010857D /* DataBase ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				AF0E86271DEF1EF30010857D /* DatabaseViewController.h */,
+				AF0E86281DEF1EF30010857D /* DatabaseViewController.m */,
+			);
+			name = "DataBase ViewController";
+			sourceTree = "<group>";
+		};
+		AF0E86301DEF1F3F0010857D /* Database View */ = {
+			isa = PBXGroup;
+			children = (
+				AF0E86341DEF1F9C0010857D /* DatabaseView.h */,
+				AF0E86351DEF1F9C0010857D /* DatabaseView.m */,
+			);
+			name = "Database View";
+			sourceTree = "<group>";
+		};
+		AF0E863A1DEF26F50010857D /* Database Model */ = {
+			isa = PBXGroup;
+			children = (
+				AF0E86371DEF26E20010857D /* DatabaseTableDataSource.h */,
+				AF0E86381DEF26E20010857D /* DatabaseTableDataSource.m */,
+				AF0E863B1DEF284A0010857D /* DatabaseTableCell.h */,
+				AF0E863C1DEF284A0010857D /* DatabaseTableCell.m */,
+			);
+			name = "Database Model";
+			sourceTree = "<group>";
+		};
 		AF2ABDFE1DD1276400D3143F /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
@@ -272,6 +330,7 @@
 		AF4C96EA1DC11D84004961BC /* Camera View Controller */ = {
 			isa = PBXGroup;
 			children = (
+				AF0E862A1DEF1F050010857D /* OpenCVDataBase */,
 				AFE6EE701DD7AE9C00EE3F18 /* Delegate */,
 				AF4C96EC1DC11E30004961BC /* Camera View */,
 				AF78F8A81DD120630012EA1E /* CameraViewController.h */,
@@ -409,6 +468,7 @@
 		AFCBEA201DEB500000D2F978 /* Places View Controller */ = {
 			isa = PBXGroup;
 			children = (
+				AF0E86231DEF18BA0010857D /* Model */,
 				AFCBEA161DEB4F9300D2F978 /* PlacesViewController.h */,
 				AFCBEA171DEB4F9300D2F978 /* PlacesViewController.m */,
 				AFCBEA211DEB500B00D2F978 /* Places View */,
@@ -693,9 +753,12 @@
 				AF78F8B41DD120630012EA1E /* CameraViewController.m in Sources */,
 				AF78F8B71DD120630012EA1E /* SettingsViewController.m in Sources */,
 				AFE6EE6F1DD7AE7A00EE3F18 /* SettingsTableViewCell.m in Sources */,
+				AF0E86391DEF26E20010857D /* DatabaseTableDataSource.m in Sources */,
 				AFCBEA181DEB4F9300D2F978 /* PlacesViewController.m in Sources */,
 				AFCBE9F11DEA036D00D2F978 /* NotificationString.m in Sources */,
 				AF4C96C11DC117EE004961BC /* VratisAppDelegate.m in Sources */,
+				AF0E863D1DEF284A0010857D /* DatabaseTableCell.m in Sources */,
+				AF0E86291DEF1EF30010857D /* DatabaseViewController.m in Sources */,
 				AFEB79611DE80B1C00AE61E6 /* UserProfileModel.xcdatamodeld in Sources */,
 				AFCBEA1E1DEB4FB600D2F978 /* PlacesView.m in Sources */,
 				AF99F08B1DE4A9AE00022926 /* MapView.m in Sources */,
@@ -714,6 +777,7 @@
 				AFE6EE791DD7C26400EE3F18 /* PhotoCaptureDelegate.m in Sources */,
 				AF78F8B51DD120630012EA1E /* Page.m in Sources */,
 				AFE6EE781DD7C26400EE3F18 /* NSError+Description.m in Sources */,
+				AF0E86361DEF1F9C0010857D /* DatabaseView.m in Sources */,
 				AF65ECC31DEB5C8400233630 /* EditProfileView.m in Sources */,
 				AF864CBA1DE792D1000CBDB7 /* MapModel.xcdatamodeld in Sources */,
 				AF864CBF1DE797B2000CBDB7 /* MapViewDataSource.m in Sources */,

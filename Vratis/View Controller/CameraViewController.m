@@ -6,6 +6,7 @@
 //  Copyright © 2016 Budyn&Friends. All rights reserved.
 //
 @import AVFoundation;
+
 #import "CameraViewController.h"
 #import "CameraView.h"
 #import "PhotoCaptureDelegate.h"
