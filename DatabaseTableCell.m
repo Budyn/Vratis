@@ -7,6 +7,9 @@
 //
 
 #import "DatabaseTableCell.h"
+@interface DatabaseTableCell()
+
+@end
 
 @implementation DatabaseTableCell
 

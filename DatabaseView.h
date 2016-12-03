@@ -11,5 +11,5 @@
 @interface DatabaseView : UIView
 - (void)setDelegateForDatabaseTable:(id<UITableViewDelegate>)delegate;
 - (void)setDataSourceForDatabaseTable:(id<UITableViewDataSource>)dataSource;
-
+- (void)reloadDatabaseTable;
 @end

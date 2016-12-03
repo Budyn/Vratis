@@ -30,6 +30,10 @@
 - (void)setDelegateForDatabaseTable:(id<UITableViewDelegate>)delegate {
     self.databaseTableView.delegate = delegate;
 }
+
+- (void)reloadDatabaseTable {
+    [self.databaseTableView reloadData];
+}
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

@@ -10,6 +10,8 @@
 #import "DatabaseView.h"
 #import "DatabaseTableDataSource.h"
 
+#import "NSError+Description.h"
+
 @interface DatabaseViewController () <UITableViewDelegate>
 @property (strong, nonatomic) IBOutlet DatabaseView *databaseView;
 
@@ -20,9 +22,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     [self.databaseView setDelegateForDatabaseTable:self];
+    
     self.databaseTableDataSource = [[DatabaseTableDataSource alloc] init];
-    [self.databaseView setDataSourceForDatabaseTable:self.databaseTableDataSource];
+    [self.databaseTableDataSource performFetch:^(NSError *error){
+        if (!error) {
+            [self.databaseView setDataSourceForDatabaseTable:self.databaseTableDataSource];
+        } else {
+            NSLog(@"Fetch failed with error:");
+            [error fullDescription];
+        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.databaseView reloadDatabaseTable];
+        });
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

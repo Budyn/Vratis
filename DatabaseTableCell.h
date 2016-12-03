@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface DatabaseTableCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIImageView *thumbnailPhoto;
 
 @end
