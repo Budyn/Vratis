@@ -23,19 +23,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    // Delegate
     [self.databaseView setDelegateForDatabaseTable:self];
     
+    // Data Source
     self.databaseTableDataSource = [[DatabaseTableDataSource alloc] init];
-    [self.databaseTableDataSource performFetch:^(NSError *error){
+    // TODO: Change this fucking callback's rollercoster
+    [self.databaseTableDataSource fetch:^(NSError *error){
         if (!error) {
             [self.databaseView setDataSourceForDatabaseTable:self.databaseTableDataSource];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.databaseView reloadDatabaseTable];
+            });
         } else {
-            NSLog(@"Fetch failed with error:");
             [error fullDescription];
         }
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self.databaseView reloadDatabaseTable];
-        });
     }];
 }
 
@@ -53,15 +55,5 @@
 - (IBAction)backButtonTapped:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

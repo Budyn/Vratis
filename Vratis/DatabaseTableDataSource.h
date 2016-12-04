@@ -10,6 +10,6 @@
 @import UIKit;
 
 @interface DatabaseTableDataSource : NSObject <UITableViewDataSource>
-- (void)performFetch: (void (^)(NSError* error))completion;
+- (void)fetch:(void (^)(NSError *error))completion;
 
 @end

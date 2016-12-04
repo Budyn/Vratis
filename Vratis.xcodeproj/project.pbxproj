@@ -28,6 +28,7 @@
 		AF78F8B51DD120630012EA1E /* Page.m in Sources */ = {isa = PBXBuildFile; fileRef = AF78F8AB1DD120630012EA1E /* Page.m */; };
 		AF78F8B61DD120630012EA1E /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF78F8AD1DD120630012EA1E /* RootViewController.m */; };
 		AF78F8B71DD120630012EA1E /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF78F8AF1DD120630012EA1E /* SettingsViewController.m */; };
+		AF82B0571DF309B600C59C30 /* RecognizerDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = AF82B0561DF309B600C59C30 /* RecognizerDataSource.m */; };
 		AF864CBA1DE792D1000CBDB7 /* MapModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AF864CB81DE792D1000CBDB7 /* MapModel.xcdatamodeld */; };
 		AF864CBC1DE79557000CBDB7 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF864CBB1DE79557000CBDB7 /* CoreData.framework */; };
 		AF864CBF1DE797B2000CBDB7 /* MapViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = AF864CBE1DE797B2000CBDB7 /* MapViewDataSource.m */; };
@@ -38,6 +39,7 @@
 		AF99F0911DE4CDA700022926 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF99F0901DE4CDA700022926 /* CoreLocation.framework */; };
 		AFB9ED3A1DEC9AAA0006D0B9 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFB9ED391DEC9AAA0006D0B9 /* Media.xcassets */; };
 		AFB9ED3D1DEC9C0B0006D0B9 /* AvatarCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AFB9ED3C1DEC9C0B0006D0B9 /* AvatarCollectionViewCell.m */; };
+		AFC297E41DF325AB004DFC0F /* Recognizer.mm in Sources */ = {isa = PBXBuildFile; fileRef = AFC297E31DF325AB004DFC0F /* Recognizer.mm */; };
 		AFC848E61DEC8E9F0020B0CB /* AvatarCollectionDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = AFC848E51DEC8E9F0020B0CB /* AvatarCollectionDataSource.m */; };
 		AFCBE9F11DEA036D00D2F978 /* NotificationString.m in Sources */ = {isa = PBXBuildFile; fileRef = AFCBE9F01DEA036D00D2F978 /* NotificationString.m */; };
 		AFCBEA121DEB09B800D2F978 /* SettingsNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFCBEA111DEB09B800D2F978 /* SettingsNavigationController.m */; };
@@ -109,6 +111,8 @@
 		AF78F8AD1DD120630012EA1E /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RootViewController.m; path = "View Controller/RootViewController.m"; sourceTree = "<group>"; };
 		AF78F8AE1DD120630012EA1E /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsViewController.h; path = "View Controller/SettingsViewController.h"; sourceTree = "<group>"; };
 		AF78F8AF1DD120630012EA1E /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsViewController.m; path = "View Controller/SettingsViewController.m"; sourceTree = "<group>"; };
+		AF82B0551DF309B600C59C30 /* RecognizerDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RecognizerDataSource.h; path = ../RecognizerDataSource.h; sourceTree = "<group>"; };
+		AF82B0561DF309B600C59C30 /* RecognizerDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RecognizerDataSource.m; path = ../RecognizerDataSource.m; sourceTree = "<group>"; };
 		AF864CB91DE792D1000CBDB7 /* MapModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MapModel.xcdatamodel; sourceTree = "<group>"; };
 		AF864CBB1DE79557000CBDB7 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		AF864CBD1DE797B2000CBDB7 /* MapViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewDataSource.h; sourceTree = "<group>"; };
@@ -124,6 +128,8 @@
 		AFB9ED391DEC9AAA0006D0B9 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		AFB9ED3B1DEC9C0B0006D0B9 /* AvatarCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AvatarCollectionViewCell.h; sourceTree = "<group>"; };
 		AFB9ED3C1DEC9C0B0006D0B9 /* AvatarCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AvatarCollectionViewCell.m; sourceTree = "<group>"; };
+		AFC297E21DF325AB004DFC0F /* Recognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Recognizer.h; path = ../Recognizer.h; sourceTree = "<group>"; };
+		AFC297E31DF325AB004DFC0F /* Recognizer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = Recognizer.mm; path = ../Recognizer.mm; sourceTree = "<group>"; };
 		AFC848E01DEC80B90020B0CB /* EditProfileDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditProfileDelegate.h; sourceTree = "<group>"; };
 		AFC848E41DEC8E9F0020B0CB /* AvatarCollectionDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AvatarCollectionDataSource.h; path = ../AvatarCollectionDataSource.h; sourceTree = "<group>"; };
 		AFC848E51DEC8E9F0020B0CB /* AvatarCollectionDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AvatarCollectionDataSource.m; path = ../AvatarCollectionDataSource.m; sourceTree = "<group>"; };
@@ -202,6 +208,7 @@
 		AF0E862A1DEF1F050010857D /* OpenCVDataBase */ = {
 			isa = PBXGroup;
 			children = (
+				AF82B0511DF3087E00C59C30 /* Recognizer */,
 				AF0E863A1DEF26F50010857D /* Database Model */,
 				AF0E86301DEF1F3F0010857D /* Database View */,
 				AF0E862B1DEF1F140010857D /* DataBase ViewController */,
@@ -368,6 +375,17 @@
 				AFCBEA261DEB5A2100D2F978 /* Profile Edit View Controller */,
 			);
 			name = Settings;
+			sourceTree = "<group>";
+		};
+		AF82B0511DF3087E00C59C30 /* Recognizer */ = {
+			isa = PBXGroup;
+			children = (
+				AF82B0551DF309B600C59C30 /* RecognizerDataSource.h */,
+				AF82B0561DF309B600C59C30 /* RecognizerDataSource.m */,
+				AFC297E21DF325AB004DFC0F /* Recognizer.h */,
+				AFC297E31DF325AB004DFC0F /* Recognizer.mm */,
+			);
+			name = Recognizer;
 			sourceTree = "<group>";
 		};
 		AF864CB41DE78EFA000CBDB7 /* Model */ = {
@@ -679,7 +697,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		44CBDC727B18454E6E7EAB14 /* [CP] Copy Pods Resources */ = {
@@ -709,7 +727,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		7ECEE57B60CCEA0970A6E115 /* [CP] Copy Pods Resources */ = {
@@ -749,6 +767,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF82B0571DF309B600C59C30 /* RecognizerDataSource.m in Sources */,
 				AFCBEA121DEB09B800D2F978 /* SettingsNavigationController.m in Sources */,
 				AF78F8B41DD120630012EA1E /* CameraViewController.m in Sources */,
 				AF78F8B71DD120630012EA1E /* SettingsViewController.m in Sources */,
@@ -756,6 +775,7 @@
 				AF0E86391DEF26E20010857D /* DatabaseTableDataSource.m in Sources */,
 				AFCBEA181DEB4F9300D2F978 /* PlacesViewController.m in Sources */,
 				AFCBE9F11DEA036D00D2F978 /* NotificationString.m in Sources */,
+				AFC297E41DF325AB004DFC0F /* Recognizer.mm in Sources */,
 				AF4C96C11DC117EE004961BC /* VratisAppDelegate.m in Sources */,
 				AF0E863D1DEF284A0010857D /* DatabaseTableCell.m in Sources */,
 				AF0E86291DEF1EF30010857D /* DatabaseViewController.m in Sources */,

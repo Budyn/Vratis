@@ -6,7 +6,7 @@ target 'Vratis' do
   # use_frameworks!
 
   # Pods for Vratis
-  pod 'OpenCV'
+  pod 'OpenCV', :inhibit_warnings => true
 
   target 'VratisTests' do
     inherit! :search_paths

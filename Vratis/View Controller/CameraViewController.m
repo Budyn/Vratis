@@ -11,6 +11,7 @@
 #import "CameraView.h"
 #import "PhotoCaptureDelegate.h"
 
+#import "Recognizer.h"
 #import "NSError+Description.h"
 
 @interface CameraViewController ()
@@ -48,6 +49,12 @@
     dispatch_async(self.sessionQueue, ^{
         [self configureCameraAccess];
         [self configureCaptureSession];
+        // Fetch data source for recognition
+        [[Recognizer sharedInstance] fetchDataSource:^(NSError *error){
+            if (error) {
+                [error fullDescription];
+            }
+        }];
     });
 }
 
@@ -177,6 +184,7 @@
 #pragma mark IBActions
 - (IBAction)photoButtonTapped:(id)sender {
     NSLog(@"Photo button tapped");
+
     [[NSNotificationCenter defaultCenter] postNotificationName:@"photoCreated" object:nil];
     dispatch_async(self.sessionQueue, ^{
         AVCapturePhotoSettings *photoSettings = [AVCapturePhotoSettings photoSettings];

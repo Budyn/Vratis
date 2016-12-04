@@ -7,13 +7,16 @@
 //
 @import Photos;
 #import "PhotoCaptureDelegate.h"
+#import "Recognizer.h"
 
 @interface PhotoCaptureDelegate()
-@property (nonatomic, readwrite) AVCapturePhotoSettings *requestedPhotoSettings;
-@property (nonatomic) void (^willCapturePhotoAnimation)();
-@property (nonatomic) void (^completed)(PhotoCaptureDelegate *photoCaptureDelegate);
+@property (strong, nonatomic, readwrite) AVCapturePhotoSettings *requestedPhotoSettings;
+@property (strong, nonatomic) void (^willCapturePhotoAnimation)();
+@property (strong, nonatomic) void (^completed)(PhotoCaptureDelegate *photoCaptureDelegate);
 
-@property (nonatomic) NSData *photoData;
+@property (strong, nonatomic) NSData *photoData;
+@property (strong, nonatomic) UIImage *greyImage;
+
 @end
 
 @implementation PhotoCaptureDelegate
@@ -48,20 +51,27 @@
     self.photoData = [AVCapturePhotoOutput JPEGPhotoDataRepresentationForJPEGSampleBuffer:photoSampleBuffer previewPhotoSampleBuffer:previewPhotoSampleBuffer];
 }
 
-- (void)captureOutput:(AVCapturePhotoOutput *)captureOutput didFinishCaptureForResolvedSettings:(AVCaptureResolvedPhotoSettings *)resolvedSettings error:(NSError *)error
-{
-    if ( error != nil ) {
+- (void)captureOutput:(AVCapturePhotoOutput *)captureOutput didFinishCaptureForResolvedSettings:(AVCaptureResolvedPhotoSettings *)resolvedSettings error:(NSError *)error {
+    if (error) {
         NSLog( @"Error capturing photo: %@", error );
         [self didFinish];
         return;
     }
-    
-    if ( self.photoData == nil ) {
+    if (!self.photoData) {
         NSLog( @"No photo data resource" );
         [self didFinish];
         return;
     }
     
+    NSString *recognizedObjectString = [[Recognizer sharedInstance] recognizeImage:[UIImage imageWithData:self.photoData]];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Success" message:[NSString stringWithFormat:@"It is %@", recognizedObjectString] preferredStyle:UIAlertControllerStyleAlert];
+    [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:nil]];
+    [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:alert animated:YES completion:nil];
+    
+    [self saveCreatedPhoto];
+}
+
+- (void)saveCreatedPhoto {
     [PHPhotoLibrary requestAuthorization:^( PHAuthorizationStatus status ) {
         if ( status == PHAuthorizationStatusAuthorized ) {
             [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
@@ -69,19 +79,19 @@
                 PHFetchOptions *fetchOptions = [[PHFetchOptions alloc] init];
                 fetchOptions.predicate = [NSPredicate predicateWithFormat:@"title = %@", @"Vratis"];
                 PHAssetCollection *collection = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeAlbum
-                                                                      subtype:PHAssetCollectionSubtypeAny
-                                                                      options:fetchOptions].firstObject;
+                                                                                         subtype:PHAssetCollectionSubtypeAny
+                                                                                         options:fetchOptions].firstObject;
                 
                 PHAssetChangeRequest *creationRequest = [PHAssetCreationRequest creationRequestForAssetFromImage:[UIImage imageWithData:self.photoData]];
                 PHObjectPlaceholder *placeholder = creationRequest.placeholderForCreatedAsset;
                 
                 PHFetchResult *photosAsset = [PHAsset fetchAssetsInAssetCollection:collection options:nil];
-
+                
                 PHAssetCollectionChangeRequest *albumChangeRequest = [PHAssetCollectionChangeRequest changeRequestForAssetCollection:collection
                                                                                                                               assets:photosAsset];
                 [albumChangeRequest addAssets:@[placeholder]];
-    
-                 } completionHandler:^( BOOL success, NSError * _Nullable error ) {
+                
+            } completionHandler:^( BOOL success, NSError * _Nullable error ) {
                 if (!success) {
                     NSLog( @"Error occurred while saving photo to photo library: %@", error );
                 }
